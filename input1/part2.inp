@@ -1,0 +1,43 @@
+# Sample input for Part 2
+
+# Input rules:
+#  1. Comment lines start with "#"
+#  2. Anything after the slash is a comment
+#  3. all input must be on a single line
+
+# Cross sections from IAEA benchmark problem
+
+# geometry 
+
+bc    1 0   / reflective (left) and zero-flux (right) boundary conditions
+dim   45    / number of mesh
+hx    45*2.0 /
+mat   5*3 5*2 5*2 5*2 5*3 5*2 5*2 5*1 5*4 /
+
+# cross sections
+# use default chi
+# nufission default to zero if not specified
+
+group 2    / number of energy groups
+
+diff  1 1.5 0.4 /     diffusion  material 1
+siga  1 0.01 0.08 /   absorption material 1
+nufis 1 0.0 0.135 /   nu*fission material 1
+scat  1 0.0 0.02 0.0 0.0 / scattering material 1  1->1, 1->2, 2->1, 2->2
+
+diff  2 1.5 0.4 /
+siga  2 0.01 0.085 /
+nufis 2 0.0 0.135 /
+scat  2 0.0 0.02 /   missing scattering terms default to zero
+
+diff  3 1.5 0.4 /
+siga  2 0.01 0.13 /
+nufis 2 0.0 0.135  /
+scat  3 0.0 0.02 /   missing scattering terms default to zero
+
+diff  4 2.0 0.3 /
+siga  4 0.0 0.01 /
+scat  4 0.0 0.04 /   missing scattering terms default to zero
+
+
+

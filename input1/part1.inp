@@ -1,0 +1,24 @@
+# Sample input for Part 1
+
+# Input rules:
+#  1. Comment lines start with "#"
+#  2. Anything after the slash is a comment
+#  3. all input must be on a single line
+
+# geometry
+
+group 1 /   number of energy groups
+tol  2*1.0e-8 / eigenvalue and flux tolerance
+bc   0 0   / zero-flux boundary conditions
+
+dim  30 /   number of mesh
+hx   30*10.0 / size of each zone (cm)
+mat  30*1    / materials in each zone
+
+# cross sections
+
+diff  1 1.5  /  diffusion coefficient material 1
+siga  1 0.05 /  sigma_a for material 1
+nufis 1 0.06 /  nu*sigma_f material 1
+chi   1 1.0  /  chi for material 1
+
